@@ -8,9 +8,18 @@ CFLAGS=-std=c++11 -pthread -Wall
 MUTFILES=Semaphore.cpp Semaphore.h
 DFLAGS=-O8 -g
 
-SIMPLE: helloThreads.cpp
-	g++ -std=c++11 -pthread helloThreads.cpp
+# This rule says that each .o file depends on a .cpp file of the same name
+%.o: %.cpp
+	$(CC) -c -o $@ $< $(CFLAGS) $(DEBUGFLAGS)
 
+REND: rendezvous.cpp Semaphore.cpp
+	$(CC) $(CFLAGS) $^ -o REND
+
+MUTUAL: $(MUTFILES)
+	$(CC) $(CFLAGS) $^ -o muty
+
+DEBUG: $(MUTFILES)
+	$(CC) $(CFLAGS) $(DFLAGS) Semaphore.cpp -o muty
 
 CLEAN:
-	rm *.o
+	rm -f *.o rendezvous muty
