@@ -1,12 +1,12 @@
-#Joseph Kehoe 13/9/2017
-#First simple Makefile
-#Used to contain commands to compile projects
-#Equivalent(?) to a project file in VStudio -- only better!
-#See http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/ for info.
+#Sebastian Firsaev 27/09/23
+#Makefile
+
 
 
 CC=g++
-CFLAGS= -std=c++11 -pthread
+CFLAGS=-std=c++11 -pthread -Wall
+MUTFILES=Semaphore.cpp Semaphore.h
+DFLAGS=-O8 -g
 
 SIMPLE: helloThreads.cpp
 	g++ -std=c++11 -pthread helloThreads.cpp
