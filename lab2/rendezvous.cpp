@@ -7,7 +7,8 @@
 void task(std::shared_ptr<Semaphore> mutexSem,std::shared_ptr<Semaphore> barrierSem, int threadCount){
 
   std::cout << "first " << std::endl;
-  //put barrier code here
+  // Wait for all threads to reach this point (barrier)
+  barrierSem->wait();
   std::cout << "second" << std::endl;
 }
 
