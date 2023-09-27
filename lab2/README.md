@@ -1,0 +1,19 @@
+# Lab2 Concurrent programming year 2
+
+## Project information:
+GPL3 Project Licence
+Sebastian Firsaev
+
+## Project installation:
+Enter the directory with the .cpp files.
+To compile and run the project, run the following commands in terminal:
+make
+./REND
+
+
+## List of files
+1. Rendezvous.cpp
+    - The main function.
+    - Runs the Threads.
+2. Semaphore.cpp | Semaphore.h
+    - Contains the Semaphore code.
