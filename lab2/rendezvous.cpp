@@ -3,13 +3,22 @@
 #include <vector>
 #include <iostream>
 
-/*! displays the first function in the barrier being executed */
-void task(std::shared_ptr<Semaphore> mutexSem,std::shared_ptr<Semaphore> barrierSem, int threadCount){
 
-  std::cout << "first " << std::endl;
-  // Wait for all threads to reach this point (barrier)
-  barrierSem->wait();
-  std::cout << "second" << std::endl;
+/*Sebastian Firsaev */
+
+/*! displays the first function in the barrier being executed */
+void task(std::shared_ptr<Semaphore> mutexSem, std::shared_ptr<Semaphore> barrierSem, int threadCount) {
+  for (int i = 0; i < 5; i++) {
+    std::cout << "first" << std::endl;
+
+    // Wait for all threads to reach this point (barrier)
+    barrierSem->wait();
+
+    std::cout << "second" << std::endl;
+
+    // Wait for all threads to finish the "second" part before looping
+    barrierSem->wait();
+  }
 }
 
 
