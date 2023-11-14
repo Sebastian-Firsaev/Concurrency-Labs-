@@ -1,3 +1,9 @@
+/**
+ * @file main.cpp
+ * @brief Dining Philosophers Problem using Semaphores
+ *Sebastian Firsaev
+ */
+
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
@@ -5,18 +11,26 @@
 #include <random>
 #include <chrono>
 
-const int COUNT = 5;
-const int THINK_TIME = 3;
-const int EAT_TIME = 5;
+const int COUNT = 5; ///< Number of philosophers
+const int THINK_TIME = 3; ///< Maximum thinking time in seconds
+const int EAT_TIME = 5; ///< Maximum eating time in seconds
 
-std::vector<Semaphore> forks(COUNT);
+std::vector<Semaphore> forks(COUNT); ///< Forks as Semaphores
 
+/**
+ * @brief Simulates the thinking process of a philosopher
+ * @param myID The philosopher's ID
+ */
 void think(int myID) {
     int seconds = rand() % THINK_TIME + 1;
     std::cout << myID << " is thinking! " << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(seconds));
 }
 
+/**
+ * @brief Philosopher attempts to acquire forks
+ * @param philID The philosopher's ID
+ */
 void get_forks(int philID) {
     if (philID == COUNT - 1) {
         forks[(philID + 1) % COUNT].Wait();
@@ -27,6 +41,10 @@ void get_forks(int philID) {
     }
 }
 
+/**
+ * @brief Philosopher releases acquired forks
+ * @param philID The philosopher's ID
+ */
 void put_forks(int philID) {
     if (philID == COUNT - 1) {
         forks[(philID + 1) % COUNT].Signal();
@@ -37,12 +55,20 @@ void put_forks(int philID) {
     }
 }
 
+/**
+ * @brief Simulates the eating process of a philosopher
+ * @param myID The philosopher's ID
+ */
 void eat(int myID) {
     int seconds = rand() % EAT_TIME + 1;
     std::cout << myID << " is chomping! " << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(seconds));
 }
 
+/**
+ * @brief The function representing the life cycle of a philosopher
+ * @param id The philosopher's ID
+ */
 void philosopher(int id) {
     while (true) {
         think(id);
@@ -52,8 +78,12 @@ void philosopher(int id) {
     }
 }
 
+/**
+ * @brief Main function
+ * @return Program exit status
+ */
 int main() {
-    srand (time(NULL)); // initialize random seed
+    srand(time(NULL)); // initialize random seed
     std::vector<std::thread> vt;
 
     for (Semaphore& s : forks) {
@@ -71,3 +101,4 @@ int main() {
 
     return 0;
 }
+
