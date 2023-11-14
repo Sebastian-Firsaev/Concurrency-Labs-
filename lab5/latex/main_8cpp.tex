@@ -1,0 +1,139 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Dining Philosophers Problem using Semaphores Sebastian Firsaev.  
+
+
+{\ttfamily \#include "{}Semaphore.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_af2e8d96df12418ec613ac68b90ba41b7}\label{main_8cpp_af2e8d96df12418ec613ac68b90ba41b7} 
+std\+::vector$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ {\bfseries forks} (\mbox{\hyperlink{main_8cpp_a308572e3937ef7742e8cc93025faf712}{COUNT}})
+\begin{DoxyCompactList}\small\item\em Forks as Semaphores. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a995feefa383b82265e681a3fe8c012c2}{think}} (int my\+ID)
+\begin{DoxyCompactList}\small\item\em Simulates the thinking process of a philosopher. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a21a9defcc14025ebcaa9484d47622b9d}{get\+\_\+forks}} (int phil\+ID)
+\begin{DoxyCompactList}\small\item\em Philosopher attempts to acquire forks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a4cec90aab433a1e4df09b9b6662d5c3e}{put\+\_\+forks}} (int phil\+ID)
+\begin{DoxyCompactList}\small\item\em Philosopher releases acquired forks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a228fa031b8deb86a9df2eea2892c3241}{eat}} (int my\+ID)
+\begin{DoxyCompactList}\small\item\em Simulates the eating process of a philosopher. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a61d704a6f65c3d915b82ea8a844cc527}{philosopher}} (int id)
+\begin{DoxyCompactList}\small\item\em The function representing the life cycle of a philosopher. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_a308572e3937ef7742e8cc93025faf712}\label{main_8cpp_a308572e3937ef7742e8cc93025faf712} 
+const int {\bfseries COUNT} = 5
+\begin{DoxyCompactList}\small\item\em Number of philosophers. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_aaea44cb01d6e9ba8964782f8191d2a99}\label{main_8cpp_aaea44cb01d6e9ba8964782f8191d2a99} 
+const int {\bfseries THINK\+\_\+\+TIME} = 3
+\begin{DoxyCompactList}\small\item\em Maximum thinking time in seconds. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a61350e1bcede0c3ceaec0d49e7bcd8de}\label{main_8cpp_a61350e1bcede0c3ceaec0d49e7bcd8de} 
+const int {\bfseries EAT\+\_\+\+TIME} = 5
+\begin{DoxyCompactList}\small\item\em Maximum eating time in seconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dining Philosophers Problem using Semaphores Sebastian Firsaev. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a228fa031b8deb86a9df2eea2892c3241}\label{main_8cpp_a228fa031b8deb86a9df2eea2892c3241} 
+\index{main.cpp@{main.cpp}!eat@{eat}}
+\index{eat@{eat}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{eat()}{eat()}}
+{\footnotesize\ttfamily void eat (\begin{DoxyParamCaption}\item[{int}]{my\+ID }\end{DoxyParamCaption})}
+
+
+
+Simulates the eating process of a philosopher. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+ID} & The philosopher\textquotesingle{}s ID \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a21a9defcc14025ebcaa9484d47622b9d}\label{main_8cpp_a21a9defcc14025ebcaa9484d47622b9d} 
+\index{main.cpp@{main.cpp}!get\_forks@{get\_forks}}
+\index{get\_forks@{get\_forks}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_forks()}{get\_forks()}}
+{\footnotesize\ttfamily void get\+\_\+forks (\begin{DoxyParamCaption}\item[{int}]{phil\+ID }\end{DoxyParamCaption})}
+
+
+
+Philosopher attempts to acquire forks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em phil\+ID} & The philosopher\textquotesingle{}s ID \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main function. 
+
+\begin{DoxyReturn}{Returns}
+Program exit status 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a61d704a6f65c3d915b82ea8a844cc527}\label{main_8cpp_a61d704a6f65c3d915b82ea8a844cc527} 
+\index{main.cpp@{main.cpp}!philosopher@{philosopher}}
+\index{philosopher@{philosopher}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{philosopher()}{philosopher()}}
+{\footnotesize\ttfamily void philosopher (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+The function representing the life cycle of a philosopher. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The philosopher\textquotesingle{}s ID \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a4cec90aab433a1e4df09b9b6662d5c3e}\label{main_8cpp_a4cec90aab433a1e4df09b9b6662d5c3e} 
+\index{main.cpp@{main.cpp}!put\_forks@{put\_forks}}
+\index{put\_forks@{put\_forks}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{put\_forks()}{put\_forks()}}
+{\footnotesize\ttfamily void put\+\_\+forks (\begin{DoxyParamCaption}\item[{int}]{phil\+ID }\end{DoxyParamCaption})}
+
+
+
+Philosopher releases acquired forks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em phil\+ID} & The philosopher\textquotesingle{}s ID \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a995feefa383b82265e681a3fe8c012c2}\label{main_8cpp_a995feefa383b82265e681a3fe8c012c2} 
+\index{main.cpp@{main.cpp}!think@{think}}
+\index{think@{think}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{think()}{think()}}
+{\footnotesize\ttfamily void think (\begin{DoxyParamCaption}\item[{int}]{my\+ID }\end{DoxyParamCaption})}
+
+
+
+Simulates the thinking process of a philosopher. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+ID} & The philosopher\textquotesingle{}s ID \\
+\hline
+\end{DoxyParams}
