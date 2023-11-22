@@ -1,8 +1,8 @@
 CXX = g++
 CPPFILES = main.cpp Semaphore.cpp
 CPPFLAGS = -Wall
-LDFLAGS = -pthread # You might need to add other libraries here
-EXE = dining_philosophers
+LDFLAGS = -pthread 
+EXE = prodCon
 
 SRCS = $(CPPFILES)
 OBJS = $(subst .cpp,.o,$(CPPFILES))
@@ -10,5 +10,10 @@ OBJS = $(subst .cpp,.o,$(CPPFILES))
 %.o: %.cpp
 	$(CXX) -c -o $@ $< $(CPPFLAGS)
 
-ALL: $(OBJS)
+all: $(EXE)
+
+$(EXE): $(OBJS)
 	$(CXX) $(OBJS) -o $(EXE) $(LDFLAGS)
+
+clean:
+	rm -f $(OBJS) $(EXE)
