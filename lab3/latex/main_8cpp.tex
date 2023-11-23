@@ -1,0 +1,63 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Usage of \doxylink{class_barrier}{Barrier} synchronization primitive.  
+
+
+{\ttfamily \#include "{}Barrier.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a96ca7eba915789dab4c11886f423c42b}{task}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_barrier}{Barrier}} $>$ barrier\+Obj)
+\begin{DoxyCompactList}\small\item\em Function executed by each thread. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Usage of \doxylink{class_barrier}{Barrier} synchronization primitive. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 @license This lab is licensed under the GPL-\/3 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Sebastian Firsaev 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Main function. 
+
+\begin{DoxyReturn}{Returns}
+Program exit status 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} An array of threads
+
+\texorpdfstring{$<$}{<} Pointer to barrier object\Hypertarget{main_8cpp_a96ca7eba915789dab4c11886f423c42b}\label{main_8cpp_a96ca7eba915789dab4c11886f423c42b} 
+\index{main.cpp@{main.cpp}!task@{task}}
+\index{task@{task}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{task()}{task()}}
+{\footnotesize\ttfamily void task (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_barrier}{Barrier}} $>$}]{barrier\+Obj }\end{DoxyParamCaption})}
+
+
+
+Function executed by each thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em barrier\+Obj} & A shared pointer to \doxylink{class_barrier}{Barrier} object \\
+\hline
+\end{DoxyParams}
