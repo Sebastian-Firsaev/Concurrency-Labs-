@@ -1,10 +1,21 @@
-The README file is a text file that explains what a project is.
-It should contain information on
-
-1. Project Licence
-2. Authors of Project
-3. How to install project
-4. List of any required Libraries, platform issues, etc.
-5. TO DO section listing items that need to be completed (errors, missing features etc.)
-6. List of files and what they contain
-7. Any other relevent information
+**Description**
+<br>
+Lab 6 - Map,Sort,Stencil
+<br>
+**License** 
+<br>
+This lab is licensed under the GPL-3. See here for further details: [LICENSE](https://www.gnu.org/licenses/gpl-3.0.en.html) 
+<br>
+**Author**
+<br>
+Sebastian Firsaev
+C00263348
+<br>
+**Git Url**
+<br>
+[Github Repository](https://github.com/Sebastian-Firsaev/Concurrency-Labs-/tree/main) 
+<br>
+**Installation** 
+<br>
+Compile using Makefile, Open the terminal
+and inside this folder, Run Make 
