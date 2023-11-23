@@ -1,0 +1,135 @@
+\doxysection{stencil.\+cpp File Reference}
+\hypertarget{stencil_8cpp}{}\label{stencil_8cpp}\index{stencil.cpp@{stencil.cpp}}
+
+
+A program implementing a stencil operation.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{stencil_8cpp_a16cd13f0a990612823638d179af32bdb}{calc\+Neighbours}} (vector$<$ float $>$ const \&in, int index, vector$<$ float $>$ \&out)
+\begin{DoxyCompactList}\small\item\em Calculates neighboring elements of a vector based on index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stencil_8cpp_acef790ec25e4b2af503275c95153adbc}{stencil}} (vector$<$ float $>$ const \&in, vector$<$ float $>$ \&out, function$<$ float(vector$<$ float $>$)$>$ f, int size)
+\begin{DoxyCompactList}\small\item\em Applies a stencil operation on the input vector using a provided function. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{stencil_8cpp_a6d6a4c1769d6dd5c00d3c0fb296988fa}{get\+New\+Value}} (vector$<$ float $>$ current\+Values)
+\begin{DoxyCompactList}\small\item\em Calculates the average value of a set of values. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stencil_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Main function -\/ Entry point of the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{stencil_8cpp_a589b8b9bfdf714f736059845d568b597}{DIM}} = 1000
+\item 
+const int \mbox{\hyperlink{stencil_8cpp_af08413a3ee12cf78b0ddeea71e2648b3}{SIZE}} = 4
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A program implementing a stencil operation. 
+
+\begin{DoxyAuthor}{Author}
+Joseph Kehoe (Doxygen Comments added by Sebastian Firsaev)
+\end{DoxyAuthor}
+This program is free software\+: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with GNU Emacs. If not, see \href{http://www.gnu.org/licenses/}{\texttt{ http\+://www.\+gnu.\+org/licenses/}}. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{stencil_8cpp_a16cd13f0a990612823638d179af32bdb}\label{stencil_8cpp_a16cd13f0a990612823638d179af32bdb} 
+\index{stencil.cpp@{stencil.cpp}!calcNeighbours@{calcNeighbours}}
+\index{calcNeighbours@{calcNeighbours}!stencil.cpp@{stencil.cpp}}
+\doxysubsubsection{\texorpdfstring{calcNeighbours()}{calcNeighbours()}}
+{\footnotesize\ttfamily int calc\+Neighbours (\begin{DoxyParamCaption}\item[{vector$<$ float $>$ const \&}]{in,  }\item[{int}]{index,  }\item[{vector$<$ float $>$ \&}]{out }\end{DoxyParamCaption})}
+
+
+
+Calculates neighboring elements of a vector based on index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The input vector. \\
+\hline
+{\em index} & The index for which neighbors need to be calculated. \\
+\hline
+{\em out} & The vector to store neighboring elements. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 1 upon successful calculation. 
+\end{DoxyReturn}
+\Hypertarget{stencil_8cpp_a6d6a4c1769d6dd5c00d3c0fb296988fa}\label{stencil_8cpp_a6d6a4c1769d6dd5c00d3c0fb296988fa} 
+\index{stencil.cpp@{stencil.cpp}!getNewValue@{getNewValue}}
+\index{getNewValue@{getNewValue}!stencil.cpp@{stencil.cpp}}
+\doxysubsubsection{\texorpdfstring{getNewValue()}{getNewValue()}}
+{\footnotesize\ttfamily float get\+New\+Value (\begin{DoxyParamCaption}\item[{vector$<$ float $>$}]{current\+Values }\end{DoxyParamCaption})}
+
+
+
+Calculates the average value of a set of values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Values} & The set of values to calculate the average. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average value of the set. 
+\end{DoxyReturn}
+\Hypertarget{stencil_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{stencil_8cpp_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{stencil.cpp@{stencil.cpp}!main@{main}}
+\index{main@{main}!stencil.cpp@{stencil.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Main function -\/ Entry point of the program. 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 upon successful execution. 
+\end{DoxyReturn}
+\Hypertarget{stencil_8cpp_acef790ec25e4b2af503275c95153adbc}\label{stencil_8cpp_acef790ec25e4b2af503275c95153adbc} 
+\index{stencil.cpp@{stencil.cpp}!stencil@{stencil}}
+\index{stencil@{stencil}!stencil.cpp@{stencil.cpp}}
+\doxysubsubsection{\texorpdfstring{stencil()}{stencil()}}
+{\footnotesize\ttfamily void stencil (\begin{DoxyParamCaption}\item[{vector$<$ float $>$ const \&}]{in,  }\item[{vector$<$ float $>$ \&}]{out,  }\item[{function$<$ float(vector$<$ float $>$)$>$}]{f,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Applies a stencil operation on the input vector using a provided function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The input vector. \\
+\hline
+{\em out} & The output vector after applying the stencil operation. \\
+\hline
+{\em f} & The function to be applied on the stencil. \\
+\hline
+{\em size} & The size of the stencil. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{stencil_8cpp_a589b8b9bfdf714f736059845d568b597}\label{stencil_8cpp_a589b8b9bfdf714f736059845d568b597} 
+\index{stencil.cpp@{stencil.cpp}!DIM@{DIM}}
+\index{DIM@{DIM}!stencil.cpp@{stencil.cpp}}
+\doxysubsubsection{\texorpdfstring{DIM}{DIM}}
+{\footnotesize\ttfamily const int DIM = 1000}
+
+\Hypertarget{stencil_8cpp_af08413a3ee12cf78b0ddeea71e2648b3}\label{stencil_8cpp_af08413a3ee12cf78b0ddeea71e2648b3} 
+\index{stencil.cpp@{stencil.cpp}!SIZE@{SIZE}}
+\index{SIZE@{SIZE}!stencil.cpp@{stencil.cpp}}
+\doxysubsubsection{\texorpdfstring{SIZE}{SIZE}}
+{\footnotesize\ttfamily const int SIZE = 4}
+
